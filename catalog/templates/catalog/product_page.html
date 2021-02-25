@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5>Категория: {{ product.subcategory.name }}</h5>
+<img src="{{ product.photo.url }}" alt="фото товара">
+<p>Наименование товара: {{ product.name }}</p>
+<p>Цена: {{ product.price }} сом</p>
+<p>Описание: {{ product.description }}</p>
+
+{% endblock %}

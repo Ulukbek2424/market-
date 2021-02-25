@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% for product in products %}
+
+  {% include 'include/_card.html' %}
+
+{% endfor %}
+{% endblock %}
+
+
+{% block user_card %}
+{% if request.user.is_authenticated %}
+<div class="col-md-3">
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Никнейм: {{ request.user.username }}</h5>
+    <p class="card-text">Email: {{ request.user.email }}</p>
+    <a href="{% url 'update' %}" class="card-link">Редактировать</a>
+    <a href="{% url 'logout' %}" class="card-link">Выход</a>
+  </div>
+</div>
+</div>
+{% endif %}
+{% endblock %}

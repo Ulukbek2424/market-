@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+{% include 'include/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+{% for product in products %}
+
+  {% include 'include/_card.html' %}
+
+{% endfor %}
+{% endblock %}

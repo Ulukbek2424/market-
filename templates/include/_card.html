@@ -1,0 +1,20 @@
+<div class="card mb-3">
+  <div class="card-header">
+    Категория: {{ product.subcategory.name }}
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{ product.photo.url }}" alt="" width="350" height="300">
+      </div>
+      <div class="col-md-6">
+        <h5 class="card-title">Наименование товара: <a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h5>
+        <p class="card-text">Цена: {{ product.price }} сом</p>
+        <p class="card-text">Описание: {{ product.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    {{ product.created_at|date:"Y-m-d H:i:s" }}
+  </div>
+</div>
